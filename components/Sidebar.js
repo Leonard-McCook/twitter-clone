@@ -1,5 +1,5 @@
 import Image from 'next/image';
-
+import SidebarMenuItem from './SidebarMenuItem';
 export default function Sidebar() {
   return (
     <div>
@@ -10,6 +10,10 @@ export default function Sidebar() {
 
 
         {/* Menu */}
+        <div className="">
+          <SidebarMenuItem />
+
+        </div>
 
 
         {/* Button */}
