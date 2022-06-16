@@ -33,8 +33,15 @@ export default function Sidebar() {
 
 
         {/* Button */}
+        <button>Tweet</button>
 
         {/* Mini-Profile */}
+        <div className="">
+            <img src="https://media-exp1.licdn.com/dms/image/C5603AQGLGLHdEj76ww/profile-displayphoto-shrink_200_200/0/1597853648256?e=1659571200&v=beta&t=l-C8_WzBgsxGKhH7bi53P916ILsq8fU-NELt8viO8IY"  alt="user-image" />
+            <div className="">
+              
+            </div>
+        </div>
 
     </div>
   )
