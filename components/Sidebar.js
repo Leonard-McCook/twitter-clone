@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import SidebarMenuItem from './SidebarMenuItem';
 import {HomeIcon} from "@heroicons/react/solid"
-import {BellIcon, BookmarkIcon, ClipboardIcon, HashtagIcon, InboxIcon, UserIcon, DotsCircleHorizontalIcon} from "@heroicons/react/outline"
+import {BellIcon, BookmarkIcon, ClipboardIcon, HashtagIcon, InboxIcon, UserIcon, DotsCircleHorizontalIcon, DotsHorizontalIcon} from "@heroicons/react/outline"
 
 export default function Sidebar() {
   return (
     <div>
       {/* Twitter Logo */}
-        <div className="">
+        <div className="hoverEffect">
             <Image 
               width="50"
               height="50" 
@@ -36,11 +36,13 @@ export default function Sidebar() {
         <button>Tweet</button>
 
         {/* Mini-Profile */}
-        <div className="">
+        <div className="hoverEffect">
             <img src="https://media-exp1.licdn.com/dms/image/C5603AQGLGLHdEj76ww/profile-displayphoto-shrink_200_200/0/1597853648256?e=1659571200&v=beta&t=l-C8_WzBgsxGKhH7bi53P916ILsq8fU-NELt8viO8IY"  alt="user-image" />
             <div className="">
-              
+                <h4>Leonard McCook</h4>
+                <p>@LeoMcCookDev</p>
             </div>
+            <DotsHorizontalIcon className="h-5" />
         </div>
 
     </div>
