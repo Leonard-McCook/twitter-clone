@@ -33,7 +33,7 @@ export default function Sidebar() {
 
 
         {/* Button */}
-        <button>Tweet</button>
+        <button className="bg-blue-400 text-white rounded-full w-56 h-12 font-bold shadow-md hover:brightness-95 text-lg hidden xl:inline">Tweet</button>
 
         {/* Mini-Profile */}
         <div className="hoverEffect">
