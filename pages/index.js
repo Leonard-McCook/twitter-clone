@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
       
 
-      <main>
+      <main className="flex min-h-screen max-w-7xl mx-auto">
       
         {/* Sidebar */}
         <Sidebar />
