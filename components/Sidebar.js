@@ -5,7 +5,7 @@ import {BellIcon, BookmarkIcon, ClipboardIcon, HashtagIcon, InboxIcon, UserIcon,
 
 export default function Sidebar() {
   return (
-    <div>
+    <div className="hidden sm:flex flex-col p-2 xl:items-start  fixed h-full" >
       {/* Twitter Logo */}
         <div className="hoverEffect">
             <Image 
@@ -37,9 +37,9 @@ export default function Sidebar() {
 
         {/* Mini-Profile */}
         <div className="hoverEffect text-color-gray-700 flex items-center justify-center xl:justify-start mt-auto">
-            <img src="https://media-exp1.licdn.com/dms/image/C5603AQGLGLHdEj76ww/profile-displayphoto-shrink_200_200/0/1597853648256?e=1659571200&v=beta&t=l-C8_WzBgsxGKhH7bi53P916ILsq8fU-NELt8viO8IY"  alt="user-image" />
+            <img src="https://media-exp1.licdn.com/dms/image/C5603AQGLGLHdEj76ww/profile-displayphoto-shrink_200_200/0/1597853648256?e=1659571200&v=beta&t=l-C8_WzBgsxGKhH7bi53P916ILsq8fU-NELt8viO8IY"  alt="user-image" className="h-10 w-10 rounded-full" />
             <div className="">
-                <h4>Leonard McCook</h4>
+                <h4 className="font-bold">Leonard McCook</h4>
                 <p>@LeoMcCookDev</p>
             </div>
             <DotsHorizontalIcon className="h-5" />
