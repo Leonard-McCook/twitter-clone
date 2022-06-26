@@ -7,7 +7,7 @@ export default function Feed() {
     {
       id: "1",
       name: "Leonard McCook",
-      username: "@LeoMcCookDev",
+      username: "LeoMcCookDev",
       userImg: "https://media-exp1.licdn.com/dms/image/C5603AQGLGLHdEj76ww/profile-displayphoto-shrink_200_200/0/1597853648256?e=1659571200&v=beta&t=l-C8_WzBgsxGKhH7bi53P916ILsq8fU-NELt8viO8IY",
       img: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80",
       text: "Nice view!",
@@ -17,7 +17,7 @@ export default function Feed() {
     {
       id: "2",
       name: "Leonard McCook",
-      username: "@LeoMcCookDev",
+      username: "LeoMcCookDev",
       userImg: "https://media-exp1.licdn.com/dms/image/C5603AQGLGLHdEj76ww/profile-displayphoto-shrink_200_200/0/1597853648256?e=1659571200&v=beta&t=l-C8_WzBgsxGKhH7bi53P916ILsq8fU-NELt8viO8IY",
       img: "https://images.unsplash.com/photo-1550853123-b81beb0b1449?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGNvc3RhJTIwcmljYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1400&q=60",
       text: "I was born and raised in Costa Rica, and I've never seen a red-eyed leaf frog in person lol",
