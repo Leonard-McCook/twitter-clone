@@ -1,4 +1,4 @@
-import { DotsHorizontalIcon } from "@heroicons/react/outline";
+import { ChartBarIcon, ChatIcon, DotsHorizontalIcon, HeartIcon, ShareIcon, TrashIcon } from "@heroicons/react/outline";
 
 export default function Posts({post}) {
   return <div>
@@ -26,16 +26,25 @@ export default function Posts({post}) {
 
           {/* post text */}
 
+          <p>{post.text}</p>
+
           {/* post image */}
+          <img src={post.img} alt="post images"  />
 
           {/* icons */}
-
+          
           <div className="">
+              <ChatIcon className="h-9"/>
+              <TrashIcon className="h-9"/>
+              <HeartIcon className="h-9"/>
+              <ShareIcon className="h-9"/>
+              <ChartBarIcon className="h-9"/>
+          </div>
 
             
-          </div>
 
 
         </div>
   </div>
 }
+
