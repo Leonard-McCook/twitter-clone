@@ -41,10 +41,9 @@ export default function Posts({post}) {
               <ChartBarIcon className="h-9 w-9 hoverEffect p-2 hover:text-sky-500 hover:bg-sky-100"/>
           </div>
 
-            
-
-
         </div>
   </div>
 }
+
+
 
