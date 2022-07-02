@@ -1,7 +1,15 @@
 import Image from 'next/image';
 import SidebarMenuItem from './SidebarMenuItem';
 import {HomeIcon} from "@heroicons/react/solid"
-import {BellIcon, BookmarkIcon, ClipboardIcon, HashtagIcon, InboxIcon, UserIcon, DotsCircleHorizontalIcon, DotsHorizontalIcon} from "@heroicons/react/outline";
+import {BellIcon, 
+        BookmarkIcon,
+        ClipboardIcon, 
+        HashtagIcon,
+        InboxIcon, 
+        UserIcon, 
+        DotsCircleHorizontalIcon, 
+        DotsHorizontalIcon} 
+        from "@heroicons/react/outline";
 import { useSession, signIn, signOut } from "next-auth/react"
 
 export default function Sidebar() {
