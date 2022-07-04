@@ -1,4 +1,4 @@
-import { EmojiHappyIcon, PhotographIcon } from "@heroicons/react/outline";
+import { EmojiHappyIcon, PhotographIcon, XIcon } from "@heroicons/react/outline";
 import { addDoc, collection, doc, serverTimestamp, updateDoc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadString } from "firebase/storage";
 import { useSession, signOut } from "next-auth/react";
@@ -32,6 +32,7 @@ export default function Input() {
         }
 
         setInput("");
+        setSelectedFile(null);
         
     };
 
@@ -59,12 +60,18 @@ export default function Input() {
                 <div className="w-full divide-y divide-gray-200">
                     <div className="">
                         <textarea 
-                        className="w-full border-none focus:ring-0 text-lg placeholder-gray-500 tracking-wide min-h-[50px] text-gray-700" rows="2" placeholder="What's happening?" 
-                        value={input} 
-                        onChange={(e)=>setInput(e.target.value)}>
-
+                            className="w-full border-none focus:ring-0 text-lg placeholder-gray-500 tracking-wide min-h-[50px] text-gray-700" rows="2" placeholder="What's happening?" 
+                            value={input} 
+                            onChange={(e)=>setInput(e.target.value)}>
                         </textarea>
                     </div>
+                    {selectedFile && (  
+                        <div className="relative">
+                            <XIcon onClick={() => setSelectedFile(null)}className="border h-7 text-black absolute cursor-pointer shadow-md border-white m-1 rounded-full"/>
+                            <img src={selectedFile} alt="" />
+                        </div>
+                    )}
+
                     <div className="flex items-center justify-between pt-2.5">
                         <div className="flex">
                             <div className="" onClick={() => filePickerRef.current.click()}>
@@ -72,7 +79,7 @@ export default function Input() {
                                 <input type="file" 
                                   hidden 
                                   ref={filePickerRef} 
-                                  onClick={addImageToPost} />
+                                  onChange={addImageToPost} />
                             </div>
                             <EmojiHappyIcon className="h-10 w-10 hoverEffect p-2 text-sky-500 hover:bg-sky-100"/>
                         </div>
