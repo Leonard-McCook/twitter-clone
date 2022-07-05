@@ -13,7 +13,7 @@ export default function Post({ post }) {
     <div className="flex p-3 cursor-pointer border-b border-gray-200">
       {/* user image */}
       <img
-        className="h-11 w-11 rounded-full mr-4"
+        className="h-10 w-10 rounded-full mr-0"
         src={post.data().userImg}
         alt="user-img"
       />
