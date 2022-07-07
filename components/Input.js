@@ -89,6 +89,7 @@ import {
                   />
                   <img
                     src={selectedFile}
+                    alt="Tweet image"
                     className={`${loading && "animate-pulse"}`}
                   />
                 </div>
