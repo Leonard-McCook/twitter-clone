@@ -8,7 +8,6 @@ function MyApp({ Component, pageProps: {session, ...pageProps} }) {
       <RecoilRoot>
         <Component {...pageProps} />
       </RecoilRoot>
-      <Component {...pageProps} />
     </SessionProvider>
   );
 }
