@@ -8,7 +8,7 @@ import {
 } from "@heroicons/react/outline";
 import { useEffect, useState } from "react";
 import { db } from "../firebase";
-import { doc, onSnapshot } from "firebase/firestore";
+import { addDoc, collection, doc, onSnapshot, serverTimestamp } from "firebase/firestore";
 import Moment from "react-moment";
 import { useSession } from "next-auth/react";
 export default function CommentModal() {
@@ -25,7 +25,18 @@ export default function CommentModal() {
    // eslint-disable-next-line react-hooks/exhaustive-deps 
   }, [postId, db]);
 
-  function sendComment() {}
+  async function sendComment() {
+    await addDoc(collection(db, "posts", postId, "comments"), {
+      comment: input,
+      name: session.user.name,
+      username: session.user.username,
+      userImg: session.user.image,
+      timestamp: serverTimestamp()
+    })
+
+    setOpen(false);
+    setInput("");
+  }
 
   return (
     <div>

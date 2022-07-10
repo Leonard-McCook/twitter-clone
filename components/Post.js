@@ -34,12 +34,14 @@ export default function Post({ post }) {
       collection(db, "posts", post.id, "likes"),
       (snapshot) => setLikes(snapshot.docs)
     );
-  }, [db]);
+    
+  }, [db]); 
 
   useEffect(() => {
     setHasLiked(
       likes.findIndex((like) => like.id === session?.user.uid) !== -1
     );
+    
   }, [likes]);
 
   async function likePost() {
@@ -74,7 +76,7 @@ export default function Post({ post }) {
         alt="user-img"
       />
       {/* right side */}
-      <div className="">
+      <div className="flex-1">
         {/* Header */}
 
         <div className="flex items-center justify-between">
