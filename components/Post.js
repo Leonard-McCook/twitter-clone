@@ -36,7 +36,7 @@ export default function Post({ post }) {
       (snapshot) => setLikes(snapshot.docs)
     );
     
-  }, [db]); 
+  }, [db]);//eslint-disable-line react-hooks/exhaustive-deps
   
   useEffect(() => {
     const unsubscribe = onSnapshot(
@@ -44,13 +44,13 @@ export default function Post({ post }) {
       (snapshot) => setComments(snapshot.docs)
     );
     
-  }, [db]); 
+  }, [db]);//eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => {
     setHasLiked(
       likes.findIndex((like) => like.id === session?.user.uid) !== -1
     );
     
-  }, [likes]);
+  }, [likes]);//eslint-disable-line react-hooks/exhaustive-deps
 
   async function likePost() {
     if (session) {
