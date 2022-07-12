@@ -1,3 +1,3 @@
-export default function Comment() {
-  return <div>comment</div>
+export default function Comment({ comment, id }) {
+  return <div>{comment.comment}</div>;
 }
