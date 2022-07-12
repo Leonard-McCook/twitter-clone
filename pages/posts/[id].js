@@ -6,18 +6,36 @@ import Widgets from "../../components/Widgets";
 import Post from "../../components/Post";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { doc, onSnapshot } from "firebase/firestore";
+import { collection, doc, onSnapshot, orderBy, query } from "firebase/firestore";
 import { db } from "../../firebase";
 
 export default function PostPage({ newsResults, randomUsersResults }) {
   const router = useRouter();
   const { id } = router.query;
   const [post, setPost] = useState();
+  const [comment, setComment] = useState([]);
+
+  //get posts data
 
   useEffect(
     () => onSnapshot(doc(db, "posts", id), (snapshot) => setPost(snapshot)),
     [db, id]//eslint-disable-line react-hooks/exhaustive-deps
   );
+
+
+  //get comments from the post
+
+  useEffect (() => {
+    onSnapshot(
+      query(
+        collection(db, "posts", id, "comments"),
+        orderBy("timestamp", "desc")
+      ), (snapshot) => setComment(snapshot.docs)
+    );
+  }, [db, id]);//eslint-disable-line react-hooks/exhaustive-deps
+
+
+
   return (
     <div>
       <Head>
