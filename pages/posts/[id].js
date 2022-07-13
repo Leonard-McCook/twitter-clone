@@ -6,7 +6,13 @@ import Widgets from "../../components/Widgets";
 import Post from "../../components/Post";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { collection, doc, onSnapshot, orderBy, query } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  onSnapshot,
+  orderBy,
+  query,
+} from "firebase/firestore";
 import { db } from "../../firebase";
 import Comment from "../../components/comment";
 
@@ -16,26 +22,26 @@ export default function PostPage({ newsResults, randomUsersResults }) {
   const [post, setPost] = useState();
   const [comments, setComments] = useState([]);
 
-  //get posts data
+  // get the post data
 
   useEffect(
     () => onSnapshot(doc(db, "posts", id), (snapshot) => setPost(snapshot)),
-    [db, id]//eslint-disable-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [db, id]
   );
 
+  // get comments of the post
 
-  //get comments from the post
-
-  useEffect (() => {
+  useEffect(() => {
     onSnapshot(
       query(
         collection(db, "posts", id, "comments"),
         orderBy("timestamp", "desc")
-      ), (snapshot) => setComments(snapshot.docs)
+      ),
+      (snapshot) => setComments(snapshot.docs)
     );
-  }, [db, id]);//eslint-disable-line react-hooks/exhaustive-deps
-
-
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [db, id]);
 
   return (
     <div>
@@ -65,16 +71,15 @@ export default function PostPage({ newsResults, randomUsersResults }) {
           {comments.length > 0 && (
             <div className="">
               {comments.map((comment) => (
-                <Comment 
+                <Comment
                   key={comment.id}
-                  id={comment.id} 
+                  commentId={comment.id}
+                  originalPostId={id}
                   comment={comment.data()}
                 />
               ))}
             </div>
           )}
-
-
         </div>
 
         {/* Widgets */}

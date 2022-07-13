@@ -30,6 +30,7 @@ export default function CommentModal() {
     onSnapshot(doc(db, "posts", postId), (snapshot) => {
       setPost(snapshot);
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [postId, db]);
 
   async function sendComment() {
@@ -39,6 +40,7 @@ export default function CommentModal() {
       username: session.user.username,
       userImg: session.user.image,
       timestamp: serverTimestamp(),
+      userId: session.user.uid,
     });
 
     setOpen(false);
