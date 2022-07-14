@@ -95,7 +95,7 @@ export default function CommentModal() {
               <div className="w-full divide-y divide-gray-200">
                 <div className="">
                   <textarea
-                    className="w-full border-none focus:ring-0 text-lg placeholder-gray-700 tracking-wide min-h-[50px] text-gray-700"
+                    className="w-full border-none focus:ring-0 text-lg placeholder-gray-500 tracking-wide min-h-[50px] text-gray-700"
                     rows="2"
                     placeholder="Tweet your reply"
                     value={input}
